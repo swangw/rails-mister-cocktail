@@ -14,5 +14,11 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import 'bootstrap';
+import {initSelect2} from '../components/select2';
+import {AOS} from '../components/aos';
 
 console.log('Hello World from Webpacker')
+
+initSelect2();
+AOS.init();
