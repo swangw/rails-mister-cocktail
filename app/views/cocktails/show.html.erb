@@ -1,6 +1,10 @@
 <h1><%= @cocktail.name %></h1>
 
-<img class="w-100" src="https://source.unsplash.com/1600x900/?<%= @cocktail.name %>-cocktail" alt="">
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 900, width: 1600, crop: :fill, class: "w-100" %>
+<% else %>
+  <img class="w-100" src="https://source.unsplash.com/1600x900/?<%= @cocktail.name %>-cocktail" alt="">
+<% end %>
 
 <ul>
   <% @cocktail.doses.each do |dose| %>
