@@ -4,13 +4,12 @@
       <div class="card mt-3">
         <% if cocktail.photo.attached? %>
           <div class="card-category flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key %>)">
-          <%= cocktail.name %>
-          <%= link_to "Ingredients", cocktail_path(cocktail), class: "btn btn-primary mt-3" %>
         <% else %>
           <div class="card-category flex-column" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/1600x900/?<%= cocktail.name %>-cocktail')">
-          <%= cocktail.name %>
-          <%= link_to "Ingredients", cocktail_path(cocktail), class: "btn btn-primary mt-3" %>
         <% end %>
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: "text-light text-decoration-none"%>
+          <button id="sweet-alert-demo" class="btn btn-primary">Delete</button>
+          <%= link_to "", cocktail, method: :delete, id: "delete-link", class: "hidden" %>
         </div>
       </div>
     </div>
